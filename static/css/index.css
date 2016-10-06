@@ -1,0 +1,148 @@
+.cf::before,
+.cf::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+html {
+    /*
+     在chrome下没有办法设置font-size小于10px,设置62.5%,font-size还是默认使用12px
+     如果要使用rem,直接将font-size设置为625%=100px;    
+    */
+    font-size: 625%;
+    font-family: Verdana, "Lantinghei SC", "Hiragino Sans GB", "Microsoft Yahei", Helvetica, arial, \5b8b\4f53, sans-serif;
+}
+
+div {
+    box-sizing: border-box;
+}
+
+body {
+    font-size: 0.12rem;
+}
+
+.container {
+    height: 100%;
+}
+
+.container header {
+    background: url(../images/bg-news-logo_344ce44.png) no-repeat #3E98F0 center center;
+    background-size: 0.65rem auto;
+}
+
+.container header a {
+    display: block;
+    text-decoration: none;
+    margin: 0.1rem;
+    height: 0.3rem;
+    line-height: 0.3rem;
+}
+
+.container header a i {
+    font-size: 0.2rem;
+    color: #fff;
+}
+
+.container header a:nth-child(1),
+.container header a:nth-child(2) {
+    float: left;
+}
+
+.container header a:nth-child(3),
+.container header a:nth-child(4) {
+    float: right;
+}
+
+.container nav ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.container nav ul li {
+    background: #3E98F0;
+    display: block;
+    float: left;
+    height: 0.4rem;
+    line-height: 0.4rem;
+    text-align: center;
+}
+
+.container nav ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.container nav ul li i {
+    height: 0.15rem;
+    border: 0.5px solid #5dabf0;
+    float: right;
+    position: relative;
+    top: 0.1rem;
+}
+
+.container nav ul li:last-child span {
+    color: #fff;
+}
+
+.container article {
+    margin: 0.1rem 0;
+    padding: 0 0.1rem;
+}
+
+.container article ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.container article ul .item {
+    border-bottom: 1px solid #f6f6f6;
+    padding: 0.1rem 0;
+}
+
+.container article ul .item a {
+    text-decoration: none;
+    display: flex;
+}
+
+.container article ul .item a .image {
+    flex: 1;
+}
+
+.container article ul .item a .image img {
+    width: 100%;
+    height: auto;
+}
+
+.container article ul .item a .content {
+    margin-left: 0.1rem;
+    flex: 2;
+}
+
+.container article ul .item a .content h1 {
+    margin: 0;
+    padding: 0;
+    font-size: 0.20rem;
+    color: #333;
+    max-height: .56rem;
+    overflow: hidden;
+}
+
+.container article ul .item a .content p {
+    color: #999;
+    margin: 0.15rem 0 0 0;
+    padding: 0;
+    float: left;
+    font-size: .13rem;
+}
+
+.container article ul .item a .content span {
+    display: block;
+    margin: 0.13rem 0 0 0.05rem;
+    float: left;
+    color: red;
+    border: 1px solid #efb9b9;
+    font-size: .13rem;
+}
