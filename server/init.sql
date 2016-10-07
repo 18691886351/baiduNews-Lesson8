@@ -1,0 +1,1 @@
+INSERT INTO `baidunews`.`news` (`id`, `newType`, `newImge`, `newTitle`, `newPubDate`, `newMark`, `newurl`) VALUES (NULL, 'jingxuan', 'http://t12.baidu.com/it/u=49510244,367766167&fm=170&s=2F366F80D042DAE71C84550A0300C0D1&w=218&h=146&img.JPEG', '新闻测试1', '1分钟前', '热点', NULL);

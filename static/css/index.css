@@ -72,6 +72,11 @@ body {
 .container nav ul li a {
     color: #fff;
     text-decoration: none;
+    padding: 0.12rem 0;
+}
+
+.container nav ul li .choice {
+    border-bottom: 2px solid #fff;
 }
 
 .container nav ul li i {
@@ -95,6 +100,10 @@ body {
     margin: 0;
     padding: 0;
     list-style: none;
+}
+
+.container article .item-list.hide {
+    display: none;
 }
 
 .container article ul .item {
