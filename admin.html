@@ -26,8 +26,8 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
-                    <li class="active"><a href="#">新闻列表</a></li>
-                    <li><a href="#">新增新闻</a></li>
+                    <li type="list" class="active"><a href="#">新闻列表</a></li>
+                    <li type="add"><a href="#">新增新闻</a></li>
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
@@ -35,7 +35,7 @@
         <!-- /.container-fluid -->
     </nav>
     <article>
-        <div class="container-fluid">
+        <div id="list-panel" class="container-fluid">
             <div class="col-xs-12 col-sm-6">
                 <div class="panel panel-default">
                     <!-- Default panel contents -->
@@ -44,6 +44,7 @@
                     <table id="news-table" class="table table-bordered">
                         <thead>
                             <tr>
+                                <th>序号</th>
                                 <th>类型</th>
                                 <!-- <th>图片</th> -->
                                 <th>标题</th>
@@ -56,6 +57,100 @@
                         <tbody>
                         </tbody>
                     </table>
+                </div>
+            </div>
+            <div id="edite-panel" style="display:none;" class="col-xs-12 col-sm-6">
+                <div class="panel panel-default">
+                    <!-- Default panel contents -->
+                    <div class="panel-heading">编辑新闻</div>
+                    <div class="panel-body">
+                        <form role="form">
+                            <div class="form-group">
+                                <label for="input-newsType">类型</label>
+                                <select id="select_newType" class="form-control">
+                                    <option value="jingxuan">精选</option>
+                                    <option value="baijia">百家</option>
+                                    <option value="local">本地</option>
+                                    <option value="entertainment">娱乐</option>
+                                    <option value="shehui">社会</option>
+                                    <option value="junshi">军事</option>
+                                    <option value="women">女人</option>
+                                    <option value="funny">搞笑</option>
+                                    <option value="internet">互联网</option>
+                                    <option value="sciencs">科技</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="input-newImage">图片</label>
+                                <input type="text" class="form-control" id="input-newImage" placeholder="图片地址">
+                            </div>
+                            <div class="form-group">
+                                <label for="input-newTitle">标题</label>
+                                <input type="text" class="form-control" id="input-newTitle" placeholder="标题">
+                            </div>
+                            <div class="form-group">
+                                <label for="input-newPubDate">发布日期</label>
+                                <input type="text" class="form-control" id="input-newPubDate" placeholder="发布日期">
+                            </div>
+                            <div class="form-group">
+                                <label for="input-mark">标记</label>
+                                <input type="text" class="form-control" id="input-newMark" placeholder="标记">
+                            </div>
+                            <div class="form-group">
+                                <label for="input-newurl">新闻来源</label>
+                                <input type="text" class="form-control" id="input-newurl" placeholder="新闻来源">
+                            </div>
+                            <button id="edite-panel-button" type="submit" class="btn btn-info">提交</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="add-panel" style="display:none;" class="container-fluid">
+            <div class="col-xs-12 col-sm-6">
+                <div class="panel panel-default">
+                    <!-- Default panel contents -->
+                    <div class="panel-heading">添加新闻</div>
+                    <div class="panel-body">
+                        <form role="form">
+                            <div class="form-group">
+                                <label for="input-newsType">类型</label>
+                                <select id="select_newType" class="form-control">
+                                    <option value="jingxuan">精选</option>
+                                    <option value="baijia">百家</option>
+                                    <option value="local">本地</option>
+                                    <option value="entertainment">娱乐</option>
+                                    <option value="shehui">社会</option>
+                                    <option value="junshi">军事</option>
+                                    <option value="women">女人</option>
+                                    <option value="funny">搞笑</option>
+                                    <option value="internet">互联网</option>
+                                    <option value="sciencs">科技</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="input-newImage">图片</label>
+                                <input type="text" class="form-control" id="input-newImage" placeholder="图片地址">
+                            </div>
+                            <div class="form-group">
+                                <label for="input-newTitle">标题</label>
+                                <input type="text" class="form-control" id="input-newTitle" placeholder="标题">
+                            </div>
+                            <div class="form-group">
+                                <label for="input-newPubDate">发布日期</label>
+                                <input type="text" class="form-control" id="input-newPubDate" placeholder="发布日期">
+                            </div>
+                            <div class="form-group">
+                                <label for="input-mark">标记</label>
+                                <input type="text" class="form-control" id="input-newMark" placeholder="标记">
+                            </div>
+                            <div class="form-group">
+                                <label for="input-newurl">新闻来源</label>
+                                <input type="text" class="form-control" id="input-newurl" placeholder="新闻来源">
+                            </div>
+                            <button id="add-panel-button" type="submit" class="btn btn-info">提交</button>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>
