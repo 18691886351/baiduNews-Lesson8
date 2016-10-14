@@ -6,6 +6,11 @@ $(document).ready(function() {
         updateNews(_id);
     });
 
+
+    $("#add-panel-button").click(function() {
+        addNews();
+    });
+
     $(".nav.navbar-nav li").click(function() {
         $(this).siblings().removeClass("active");
         $(this).addClass("active");
@@ -31,6 +36,7 @@ $(document).ready(function() {
                             $("#select_newType").find("option").each(function() {
                                 if ($(this).attr("value") == item.newType) {
                                     $(this).attr("selected", "selected");
+                                    $(this).siblings().removeAttr("selected");
                                 }
                             })
                             $("#input-newImage").val(item.newImge);
@@ -71,6 +77,37 @@ function deleteNews(id) {
 }
 
 
+function addNews() {
+    _newtype = $("#add-panel #select_newType option:selected").val();
+    _newImge = $("#add-panel #input-newImage").val();
+    _newTitle = $("#add-panel #input-newTitle").val();
+    _newPubDate = $("#add-panel #input-newPubDate").val();
+    _newMark = $("#add-panel #input-newMark").val();
+    _newurl = $("#add-panel #input-newurl").val();
+    $.ajax({
+        type: "post",
+        url: "../../server/add.php",
+        data: {
+            "newtype": _newtype,
+            "newImge": _newImge,
+            "newTitle": _newTitle,
+            "newPubDate": _newPubDate,
+            "newMark": _newMark,
+            "newurl": _newurl
+        },
+        error: function(data) {
+            console.log(data);
+            $("#add-result").html("新增" + data.toString() + "新闻失败");
+        },
+        success: function(data) {
+            console.log(data);
+            $("#add-result").html("新增" + data.toString() + "新闻完成");
+            refreshNews(); //刷新列表
+        },
+        dataType: "json"
+    });
+}
+
 var updateNews = function(id) {
     _newtype = $("#select_newType option:selected").val();
     _newImge = $("#input-newImage").val();
@@ -78,6 +115,7 @@ var updateNews = function(id) {
     _newPubDate = $("#input-newPubDate").val();
     _newMark = $("#input-newMark").val();
     _newurl = $("#input-newurl").val();
+    $("#list-panel #edite-panel .locked").show(); //锁定
     $.ajax({
         type: "post",
         url: "../../server/update.php",
@@ -92,9 +130,13 @@ var updateNews = function(id) {
         },
         error: function(data) {
             console.log(data);
+            $("#edite-result").html("修改新闻" + data.toString() + "失败");
+            $("#list-panel #edite-panel .locked").hide();
         },
         success: function(data) {
             console.log(data);
+            $("#edite-result").html("修改新闻" + data.toString() + "成功");
+            $("#list-panel #edite-panel .locked").hide();
             refreshNews(); //刷新列表
         },
         dataType: "json"
