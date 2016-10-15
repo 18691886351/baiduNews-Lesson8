@@ -25,6 +25,7 @@ $(document).ready(function() {
     $("#news-table tbody").on("click", "th button", function() {
         if ($(this).attr("operation") == "edite") {
             var _id = $(this).attr("dataIndex");
+            $("#edite-panel").hide();
             $.ajax({
                 type: "post",
                 url: "../../server/news.php",

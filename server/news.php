@@ -1,8 +1,7 @@
 <?php
-header("content-type:application/json;charset=utf8");
-
-$mysqli = mysqli_connect('localhost', 'root', 'root', 'baidunews');
-
+//header("content-type:application/json;charset=utf8");
+//$mysqli = mysqli_connect('localhost', 'root', 'root', 'baidunews');
+require_once 'config.php';
 if ($mysqli->connect_errno) {
 	header('HTTP/1.1 500 Internal Server Error');
     echo "Failed to connect to MySQL: (" . $mysqli->connect_errno . ") " . $mysqli->connect_error;
@@ -19,10 +18,8 @@ if ($mysqli->connect_errno) {
 	)
 );
 echo json_encode($arr); */
-mysqli_query($mysqli,'set names utf8');//防止乱码
-
+//mysqli_query($mysqli,'set names utf8');//防止乱码
 $id = $_POST['id'];
-
 if($id==""){
     $res = $mysqli->query("SELECT id,newType,newImge,newTitle,newPubDate,newMark,newurl FROM news ORDER BY id DESC");
     $res->data_seek(0);
